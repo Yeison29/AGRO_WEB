@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from config import Config
-from AGRO_WEB.homeFarmer.medels import db
+from AGRO_WEB.homeFarmer.models import db
 
 def create_app():
     app = Flask(__name__,instance_relative_config=False)
