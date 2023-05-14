@@ -1,10 +1,7 @@
 from flask import Flask
+from AGRO_WEB import create_app
 
-app = Flask(__name__)
-
-@app.route('/')
-def index():
-    return '¡Hola, mundo!'
+app = create_app()
 
 if __name__ == '__main__':
     app.run(debug=True)
