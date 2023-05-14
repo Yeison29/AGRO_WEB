@@ -1,10 +1,10 @@
 from flask import Flask
+from AGRO_WEB import create_app
+from config import Config
+import psycopg2
 
-app = Flask(__name__)
-
-@app.route('/')
-def index():
-    return '¡Hola, mundo!'
+app = create_app()
+app.config.from_object(Config)
 
 if __name__ == '__main__':
     app.run(debug=True)
