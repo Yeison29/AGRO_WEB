@@ -9,7 +9,7 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Poppins:300,400,500">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     {% block pagestyles %}{% endblock %}
@@ -43,72 +43,16 @@
                 <div class="rd-navbar-main-element">
                   <div class="rd-navbar-nav-wrap">
                     <!-- RD Navbar Basket-->
-                    <div class="rd-navbar-basket-wrap">
-                      <button class="rd-navbar-basket fl-bigmug-line-shopping198" data-rd-navbar-toggle=".cart-inline"><span>2</span></button>
-                      <div class="cart-inline">
-                        <div class="cart-inline-header">
-                          <h5 class="cart-inline-title">In cart:<span> 2</span> Products</h5>
-                          <h6 class="cart-inline-title">Total price:<span> $800</span></h6>
-                        </div>
-                        <div class="cart-inline-body">
-                          <div class="cart-inline-item">
-                            <div class="unit align-items-center">
-                              <div class="unit-left"><a class="cart-inline-figure" href="#"><img src="{{ url_for('static', filename='images/product-mini-1-108x100.png') }}" alt="" width="108" height="100"/></a></div>
-                              <div class="unit-body">
-                                <h6 class="cart-inline-name"><a href="#">Blueberries</a></h6>
-                                <div>
-                                  <div class="group-xs group-inline-middle">
-                                    <div class="table-cart-stepper">
-                                      <input class="form-input" type="number" data-zeros="true" value="1" min="1" max="1000">
-                                    </div>
-                                    <h6 class="cart-inline-title">$550</h6>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="cart-inline-item">
-                            <div class="unit align-items-center">
-                              <div class="unit-left"><a class="cart-inline-figure" href="#"><img src="{{ url_for('static', filename='images/product-mini-2-108x100.png') }}" alt="" width="108" height="100"/></a></div>
-                              <div class="unit-body">
-                                <h6 class="cart-inline-name"><a href="#">Avocados</a></h6>
-                                <div>
-                                  <div class="group-xs group-inline-middle">
-                                    <div class="table-cart-stepper">
-                                      <input class="form-input" type="number" data-zeros="true" value="1" min="1" max="1000">
-                                    </div>
-                                    <h6 class="cart-inline-title">$250</h6>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="cart-inline-footer">
-                          <div class="group-sm"><a class="button button-md button-default-outline-2 button-wapasha" href="#">Go to cart</a><a class="button button-md button-primary button-pipaluk" href="#">Checkout</a></div>
-                        </div>
-                      </div>
-                    </div><a class="rd-navbar-basket rd-navbar-basket-mobile fl-bigmug-line-shopping198" href="#"><span>2</span></a>
+                    
                     <!-- RD Navbar Search-->
-                    <div class="rd-navbar-search">
-                      <button class="rd-navbar-search-toggle" data-rd-navbar-toggle=".rd-navbar-search"><span></span></button>
-                      <form class="rd-search" action="#">
-                        <div class="form-wrap">
-                          <label class="form-label" for="rd-navbar-search-form-input">Search...</label>
-                          <input class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="search">
-                          <button class="rd-search-form-submit fl-bigmug-line-search74" type="submit"></button>
-                        </div>
-                      </form>
-                    </div>
+                    
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
                       <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.html">About Us</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url_for('homeFarmer_bp.homeFarmer') }}">Agricultor</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Typography</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="contact-us.html">Contact Us</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url_for('homePlaze_bp.homePlaze') }}">Plaza</a>
                       </li>
                     </ul>
                   </div>
@@ -131,7 +75,7 @@
                       <p>We are always ready to provide you with fresh organic products for your home or office. Contact us to find out how we can help you.</p>
                       <div class="heading-6 subtitle">Our Contacts</div>
                       <div class="row row-10 gutters-10">
-                        <div class="col-12"><img src="{{ url_for('static', filename='images/home-sidebar-394x255.jpg') }}" alt="" width="394" height="255"/>
+                        <div class="col-12"><img src="{{ url_for('static', filename='images/img/img1.jpg') }}" alt="" width="394" height="255"/>
                         </div>
                       </div>
                       <ul class="rd-navbar-modern-contacts">
@@ -172,7 +116,7 @@
       <!-- Swiper-->
       <section class="section swiper-container swiper-slider swiper-slider-modern" data-loop="true" data-autoplay="5000" data-simulate-touch="true" data-nav="true" data-slide-effect="fade">
         <div class="swiper-wrapper text-left">
-          <div class="swiper-slide context-dark" data-slide-bg="images/slider-1-1920x729.jpg">
+          <div class="swiper-slide context-dark" data-slide-bg="{{ url_for('static', filename='images/img/img1.jpg') }}">
             <div class="swiper-slide-caption">
               <div class="container">
                 <div class="row justify-content-center justify-content-xxl-start">
@@ -187,7 +131,7 @@
               </div>
             </div>
           </div>
-          <div class="swiper-slide context-dark" data-slide-bg="{{ url_for('static', filename='images/slider-2-1920x729.jpg') }}">
+          <div class="swiper-slide context-dark" data-slide-bg="{{ url_for('static', filename='images/img/img2.jpg') }}">
             <div class="swiper-slide-caption">
               <div class="container">
                 <div class="row justify-content-center justify-content-xxl-start">
@@ -202,7 +146,7 @@
               </div>
             </div>
           </div>
-          <div class="swiper-slide" data-slide-bg="{{ url_for('static', filename='images/slider-3-1920x729.jpg') }}">
+          <div class="swiper-slide" data-slide-bg="{{ url_for('static', filename='images/img/img3.jpg') }}">
             <div class="swiper-slide-caption">
               <div class="container">
                 <div class="row justify-content-center justify-content-xxl-start">
@@ -295,8 +239,8 @@
               <!-- Team Classic-->
               <article class="team-classic"><a class="team-classic-figure" href="#"><img src="{{ url_for('static', filename='images/team-1-370x406.jpg') }}" alt="" width="370" height="406"/></a>
                 <div class="team-classic-caption">
-                  <h5 class="team-classic-name"><a href="#">Ryan Wilson</a></h5>
-                  <p class="team-classic-status">Founder</p>
+                  <h5 class="team-classic-name"><a href="#">Harold Fabián Martinez Carbajalino</a></h5>
+                  <p class="team-classic-status">Developer</p>
                 </div>
               </article>
             </div>
@@ -304,8 +248,8 @@
               <!-- Team Classic-->
               <article class="team-classic"><a class="team-classic-figure" href="#"><img src="{{ url_for('static', filename='images/team-2-370x406.jpg') }}" alt="" width="370" height="406"/></a>
                 <div class="team-classic-caption">
-                  <h5 class="team-classic-name"><a href="#">Jill Peterson</a></h5>
-                  <p class="team-classic-status">Garden Manager</p>
+                  <h5 class="team-classic-name"><a href="#">Josue Campo Silva</a></h5>
+                  <p class="team-classic-status">Developer</p>
                 </div>
               </article>
             </div>
@@ -313,8 +257,8 @@
               <!-- Team Classic-->
               <article class="team-classic"><a class="team-classic-figure" href="#"><img src="{{ url_for('static', filename='images/team-3-370x406.jpg') }}" alt="" width="370" height="406"/></a>
                 <div class="team-classic-caption">
-                  <h5 class="team-classic-name"><a href="#">Sam Robinson</a></h5>
-                  <p class="team-classic-status">Farmyard Coordinator</p>
+                  <h5 class="team-classic-name"><a href="#">Yeison Danuil Ascanio Ascanio</a></h5>
+                  <p class="team-classic-status">Developer</p>
                 </div>
               </article>
             </div>
@@ -365,6 +309,7 @@
       <!-- Improve your interior with deco-->
 
       <!-- Page Footer-->
+    </div>
     {% block content %}{% endblock %}
   </body>
    <!-- Javascript-->
