@@ -35,8 +35,8 @@ class City(db.Model):
     def __repr__(self):
         return '<City {}>'.format(self.id)
 
-class Farmer(db.Model):
-    __tablename__ = "farmer"
+class User(db.Model):
+    __tablename__ = "user"
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), unique=False, nullable=False)
     lastname= db.Column(db.String(50), unique=False, nullable=False)
@@ -48,6 +48,7 @@ class Farmer(db.Model):
     genre =  db.Column(db.String(250), nullable=False)
     phone = db.Column(db.String(10), nullable=False)
     address = db.Column(db.String(600), unique=False, nullable=False)
+    type_user = db.Column(db.String(1), unique=False, nullable=False)
     fk_country = db.Column(db.Integer, ForeignKey('country.id'), unique=False, nullable=False)
     country = relationship(Country)
     fk_department = db.Column(db.Integer, ForeignKey('department.id'), unique=False, nullable=False)
@@ -68,6 +69,13 @@ class Farmer(db.Model):
         if value not in allowed_values:
             raise ValueError(f"{value} is not a valid gender.")
         return value
+    
+    @validates('type_user')
+    def validate_type_identification(self, key, value):
+        allowed_values = ['T', 'A', 'P', 'S']
+        if value not in allowed_values:
+            raise ValueError(f"{value} is not a valid type of identification.")
+        return value
 
     def __repr__(self):
-        return '<Farmer {}>'.format(self.id)
+        return '<User {}>'.format(self.id)
