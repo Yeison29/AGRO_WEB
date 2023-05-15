@@ -1,0 +1,24 @@
+.btn-menu{
+    background-color: grey;
+	font-size: 16px;
+	line-height: 1.2;
+	font-weight: 500;
+	letter-spacing: 0;
+	color: #151515;
+	transition: .25s;
+    height: 50px;
+    border-radius: 5px;
+    display: flex; /* Establece el contenedor como flexbox */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+}
+.btn-menu:hover{
+    background-color: #eda407;
+}
+.selected{
+    background-color: #3c6a36;
+    pointer-events: none;
+}
+.selected a{
+    color: white;
+}

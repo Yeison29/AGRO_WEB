@@ -9,3 +9,7 @@ def home():
     # result = get_query_result_conect(conn)
     print("Conectado")
     return render_template("home.html")
+
+@home_bp.route('/home')
+def homeSecundary():
+    return redirect("/")

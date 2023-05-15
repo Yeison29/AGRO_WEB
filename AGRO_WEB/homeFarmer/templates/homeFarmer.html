@@ -3,5 +3,18 @@
 {% block pagestyles %}
 {% endblock %}
 {% block content %}
-    <h3>Hola Agricultor</h3>
+    <!-- Breadcrumbs -->
+    <section class="breadcrumbs-custom-inset">
+        <div class="breadcrumbs-custom context-dark bg-overlay-33">
+          <div class="container">
+            <h2 class="breadcrumbs-custom-title">Agricultor</h2>
+            <ul class="breadcrumbs-custom-path">
+              <li><a href="{{ url_for('home_bp.home') }}">Home</a></li>
+              <li class="active">Agricultor</li>
+            </ul>
+          </div>
+          <div class="box-position" style="background-image: url({{ url_for('static', filename='images/img/img4.jpg') }});"></div>
+        </div>
+      </section>
+      <!-- Base typography-->
 {% endblock %}
