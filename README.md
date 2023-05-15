@@ -13,7 +13,7 @@ sudo service postgresql start ---> iniciar servicio de postgres
 sudo service postgresql status ---> mirar el si esta activo o no postgres
 sudo service postgresql stop ---> parar el servicio de postgres
 
-sudo -u postgres psql --> abrir el terminal de postgres
+sudo -u postgres psql --> abrir el terminal de postgres o "psql -U postgres -h localhost" --> es lo mismo
 CREATE DATABASE mydatabase; --> crear la base de datos
 SELECT usename FROM pg_user; --> Para ver todos los usuarios existentes en PostgreSQL
 SELECT * FROM pg_shadow WHERE usename='<username>'; --> ara ver la contraseña de un usuario específico, esta incriptada
