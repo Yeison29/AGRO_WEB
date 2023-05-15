@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
   <head>
-    <title>Herber</title>
+    <title>AGRO-WEB</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,7 +38,7 @@
                   <!-- RD Navbar Toggle-->
                   <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                   <!-- RD Navbar Brand-->
-                  <div class="rd-navbar-brand"><a class="brand" href="index.html"><img src="{{ url_for('static', filename='images/AGRO-WEB.png') }}" alt="" style="width: 392px !important; height: 500px !important; " width="392" height="500"/></a></div>
+                  <div class="rd-navbar-brand"><a class="brand" href="{{ url_for('home_bp.home') }}"><img src="{{ url_for('static', filename='images/AGRO-WEB.png') }}" alt="" style="width: 392px !important; height: 500px !important; " width="392" height="500"/></a></div>
                 </div>
                 <div class="rd-navbar-main-element">
                   <div class="rd-navbar-nav-wrap">
@@ -83,7 +83,7 @@
                         <li>
                           <div class="unit unit-spacing-sm">
                             <div class="unit-left"><span class="icon fa fa-phone"></span></div>
-                            <div class="unit-body"><a class="link-phone" href="tel:#">+57 3112884010</a></div>
+                            <div class="unit-body"><a class="link-phone" href="tel:3112884010">+57 3112884010</a></div>
                           </div>
                         </li>
                         <li>
@@ -95,7 +95,7 @@
                         <li>
                           <div class="unit unit-spacing-sm">
                             <div class="unit-left"><span class="icon fa fa-envelope"></span></div>
-                            <div class="unit-body"><a class="link-email" href="mailto:#">hfmartinezc@ufpso.edu.co</a></div>
+                            <div class="unit-body"><a class="link-email" href="mailto:hfmartinezc@ufpso.edu.co">hfmartinezc@ufpso.edu.co</a></div>
                           </div>
                         </li>
                       </ul>
@@ -178,10 +178,10 @@
               <article class="box-icon-ruby">
                 <div class="unit box-icon-ruby-body flex-column flex-md-row text-md-left flex-lg-column align-items-center text-lg-center flex-xl-row text-xl-left">
                   <div class="unit-left">
-                    <div class="box-icon-ruby-icon linearicons-leaf"></div>
+                    <div><img src="{{ url_for('static', filename='images/img/verduras.png') }}" alt="" width="58" height="58" /> </div>
                   </div>
                   <div class="unit-body">
-                    <h4 class="box-icon-ruby-title"><a href="#">Natural &amp; Organic</a></h4>
+                    <h4 class="box-icon-ruby-title"><a href="#">Precios de Productos Agrícolas</a></h4>
                   </div>
                 </div>
               </article>
@@ -190,10 +190,10 @@
               <article class="box-icon-ruby">
                 <div class="unit box-icon-ruby-body flex-column flex-md-row text-md-left flex-lg-column align-items-center text-lg-center flex-xl-row text-xl-left">
                   <div class="unit-left">
-                    <div class="box-icon-ruby-icon linearicons-shovel"></div>
+                    <div><img src="{{ url_for('static', filename='images/img/fertilizer.png') }}" alt="" width="58" height="58"/></div>
                   </div>
                   <div class="unit-body">
-                    <h4 class="box-icon-ruby-title"><a href="#">Best Equipment</a></h4>
+                    <h4 class="box-icon-ruby-title"><a href="#">Precios de Insumos Agrícolas</a></h4>
                   </div>
                 </div>
               </article>
@@ -202,10 +202,10 @@
               <article class="box-icon-ruby">
                 <div class="unit box-icon-ruby-body flex-column flex-md-row text-md-left flex-lg-column align-items-center text-lg-center flex-xl-row text-xl-left">
                   <div class="unit-left">
-                    <div class="box-icon-ruby-icon linearicons-sun"></div>
+                    <div><img src="{{ url_for('static', filename='images/img/sembrado.png') }}" alt="" width="58" height="58"/></div>
                   </div>
                   <div class="unit-body">
-                    <h4 class="box-icon-ruby-title"><a href="#">Dedicated Team</a></h4>
+                    <h4 class="box-icon-ruby-title"><a href="#">Lo más Sembrado en el Catatumbo</a></h4>
                   </div>
                 </div>
               </article>
@@ -219,11 +219,11 @@
 
       <!-- Section CTA 2-->
       <section class="section text-center">
-        <div class="parallax-container" data-parallax-img="images/bg-parallax-1.jpg">
+        <div class="parallax-container" data-parallax-img="{{ url_for('static', filename='images/img/precios_insumos.jpg') }}">
           <div class="parallax-content section-xl section-inset-custom-1 context-dark bg-overlay-40">
-            <div class="container">
-              <h2 class="oh font-weight-normal"><span class="d-inline-block wow slideInDown" data-wow-delay="0s">Our Approach</span></h2>
-              <p class="oh big text-width-large"><span class="d-inline-block wow slideInUp" data-wow-delay=".2s">Our farm strictly combines the traditions of organic farming with the latest innovations to make our products healthy and safe for the clients.</span></p><a class="button button-primary button-icon button-icon-left button-ujarak wow fadeInUp" href="https://www.youtube.com/watch?v=H-UlbiozeYs" data-lightgallery="item" data-wow-delay=".1s"><span class="icon mdi mdi-play"></span>View presentation</a>
+            <div class="container" >
+              <h2 class="oh font-weight-normal" style="padding: 12px;margin: 0;"><span class="d-inline-block wow slideInDown" data-wow-delay="0s">&Uacute;ltimas Noticias de Agricultura</span></h2>
+              <p class="oh big text-width-large" style="color:white"><span class="d-inline-block wow slideInUp" data-wow-delay=".2s">¿Cuál es la razón detrás de que los agricultores estén experimentando mayores pérdidas en la actualidad, teniendo en cuenta que la presencia de los intermediarios en la cadena de ventas siempre ha existido?</span></p><a class="button button-primary button-icon button-icon-left button-ujarak wow fadeInUp" href="https://www.youtube.com/watch?v=H-UlbiozeYs" data-lightgallery="item" data-wow-delay=".1s"><span class="icon mdi mdi-play"></span>Ver Video</a>
             </div>
           </div>
         </div>
@@ -233,12 +233,12 @@
       <section class="section section-md bg-default">
         <div class="container">
           <div class="oh">
-            <h2 class="wow slideInUp" data-wow-delay="0s">Our Team</h2>
+            <h2 class="wow slideInUp" data-wow-delay="0s">Nuestro Equipo</h2>
           </div>
           <div class="row row-30 justify-content-center">
             <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInRight" data-wow-delay="0s">
               <!-- Team Classic-->
-              <article class="team-classic"><a class="team-classic-figure" href="#"><img src="{{ url_for('static', filename='images/team-1-370x406.jpg') }}" alt="" width="370" height="406"/></a>
+              <article class="team-classic"><a class="team-classic-figure" href="#"><img src="{{ url_for('static', filename='images/harold.jpg') }}" alt="" width="370" height="406"/></a>
                 <div class="team-classic-caption">
                   <h5 class="team-classic-name"><a href="#">Harold Fabián Martínez Carvajalino</a></h5>
                   <p class="team-classic-status">Developer</p>
@@ -247,7 +247,7 @@
             </div>
             <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInRight" data-wow-delay=".1s">
               <!-- Team Classic-->
-              <article class="team-classic"><a class="team-classic-figure" href="#"><img src="{{ url_for('static', filename='images/team-2-370x406.jpg') }}" alt="" width="370" height="406"/></a>
+              <article class="team-classic"><a class="team-classic-figure" href="#"><img src="{{ url_for('static', filename='images/josue.jpg') }}" alt="" width="370" height="406"/></a>
                 <div class="team-classic-caption">
                   <h5 class="team-classic-name"><a href="#">Josué Campo Silva</a></h5>
                   <p class="team-classic-status">Developer</p>
@@ -256,7 +256,7 @@
             </div>
             <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInRight" data-wow-delay=".2s">
               <!-- Team Classic-->
-              <article class="team-classic"><a class="team-classic-figure" href="#"><img src="{{ url_for('static', filename='images/team-3-370x406.jpg') }}" alt="" width="370" height="406"/></a>
+              <article class="team-classic"><a class="team-classic-figure" href="#"><img src="{{ url_for('static', filename='images/yeison.jpg') }}" alt="" width="370" height="406"/></a>
                 <div class="team-classic-caption">
                   <h5 class="team-classic-name"><a href="#">Yeison Danuil Ascanio Ascanio</a></h5>
                   <p class="team-classic-status">Developer</p>
@@ -269,36 +269,36 @@
 
       <!-- About us-->
       <section class="section">
-        <div class="parallax-container" data-parallax-img="{{ url_for('static', filename='images/bg-parallax-2.jpg') }}">
+        <div class="parallax-container" data-parallax-img="{{ url_for('static', filename='images/img/campo.jpg') }}">
           <div class="parallax-content section-xl context-dark bg-overlay-68">
             <div class="container">
               <div class="row row-lg row-50 justify-content-center border-classic border-classic-big">
                 <div class="col-sm-6 col-md-5 col-lg-3 wow fadeInLeft" data-wow-delay="0s">
                   <div class="counter-creative">
-                    <div class="counter-creative-number"><span class="counter">12</span><span class="icon counter-creative-icon fl-bigmug-line-trophy55"></span>
+                    <div class="counter-creative-number"><span class="counter">12</span><img style="position: relative; top: 2px; right: -18px;" src="{{ url_for('static', filename='images/img/red.png') }}" alt="" width="53" height="73"/>
                     </div>
-                    <h6 class="counter-creative-title">Awards</h6>
+                    <h6 class="counter-creative-title">Entidades Al&iacute;adas</h6>
                   </div>
                 </div>
                 <div class="col-sm-6 col-md-5 col-lg-3 wow fadeInLeft" data-wow-delay=".1s">
                   <div class="counter-creative">
-                    <div class="counter-creative-number"><span class="counter">2</span><span class="symbol">k</span><span class="icon counter-creative-icon fl-bigmug-line-up104"></span>
+                    <div class="counter-creative-number"><span class="counter">2</span><span class="symbol">k</span><img style="position: relative; top: 2px; right: -14px;" src="{{ url_for('static', filename='images/img/suministro.png') }}" alt="" width="50" height="70"/>
                     </div>
-                    <h6 class="counter-creative-title">Products</h6>
+                    <h6 class="counter-creative-title">Tiendas Agr&iacute;colas al&iacute;adas</h6>
                   </div>
                 </div>
                 <div class="col-sm-6 col-md-5 col-lg-3 wow fadeInLeft" data-wow-delay=".2s">
                   <div class="counter-creative">
-                    <div class="counter-creative-number"><span class="counter">679</span><span class="icon counter-creative-icon fl-bigmug-line-sun81"></span>
+                    <div class="counter-creative-number"><span class="counter">679</span><img style="position: relative; top: 2px; right: -10px;" src="{{ url_for('static', filename='images/img/mercado.png') }}" alt="" width="48" height="56"/>
                     </div>
-                    <h6 class="counter-creative-title">Happy Clients</h6>
+                    <h6 class="counter-creative-title">Plazas agr&iacute;colas al&iacute;adas</h6>
                   </div>
                 </div>
                 <div class="col-sm-6 col-md-5 col-lg-3 wow fadeInLeft" data-wow-delay=".3s">
                   <div class="counter-creative">
-                    <div class="counter-creative-number"><span class="counter">13</span><span class="icon counter-creative-icon fl-bigmug-line-user143"></span>
+                    <div class="counter-creative-number"><span class="counter">13</span><img style="position: relative; top: 2px; right: -10px;" src="{{ url_for('static', filename='images/img/granjero.png') }}" alt="" width="48" height="56"/>
                     </div>
-                    <h6 class="counter-creative-title">Farmers</h6>
+                    <h6 class="counter-creative-title">Agricultores</h6>
                   </div>
                 </div>
               </div>
