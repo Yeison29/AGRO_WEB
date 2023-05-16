@@ -5,11 +5,14 @@ home_bp = Blueprint("home_bp", __name__, template_folder="templates", static_fol
 
 @home_bp.route('/')
 def home():
-    # conn=connect_to_db()
-    # result = get_query_result_conect(conn)
     print("Conectado")
     return render_template("home.html")
 
 @home_bp.route('/home')
 def homeSecundary():
     return redirect("/")
+
+@home_bp.route('/precisProducts')
+def precisProducts():
+    print("entro")
+    return render_template("tablePrecisProducts/products.html")

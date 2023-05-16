@@ -1,0 +1,16 @@
+{% extends "layoutHome/layout.html" %}
+
+{% block pagestyles %}
+{% endblock %}
+{% block content %}
+<div class="container">
+    <h2 class="breadcrumbs-custom-title">Precios de Productos Agricolas</h2>
+    <ul class="breadcrumbs-custom-path">
+        <li><a href="{{ url_for('home_bp.home') }}" style="color: black;">Home </a>
+            <label style="color: grey;">/</label>
+            <a href="#" style="color: rgb(168, 167, 167); pointer-events: none;"> PricesProducts</a>
+        </li> 
+    </ul>
+</div>
+{% include 'tablePrecisProducts/whyChoose.html' %}
+{% endblock %}
