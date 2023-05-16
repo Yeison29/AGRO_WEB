@@ -39,14 +39,14 @@ class User(db.Model):
     __tablename__ = "user"
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), unique=False, nullable=False)
-    lastname= db.Column(db.String(50), unique=False, nullable=False)
+    lastname= db.Column(db.String(50), unique=False, nullable=True)
     email = db.Column(db.String(255), unique=True, nullable=False)
     password = db.Column(db.String(250), nullable=False)
     date_of_birth = db.Column(db.DateTime, nullable=False)
-    type_identification = db.Column(db.String(250), nullable=False)
+    type_identification = db.Column(db.String(250), nullable=True)
     number_identification = db.Column(db.String(250), unique=True, nullable=False)
-    genre =  db.Column(db.String(250), nullable=False)
-    phone = db.Column(db.String(10), nullable=False)
+    gender =  db.Column(db.String(250), nullable=True)
+    phone = db.Column(db.String(10), unique=False, nullable=False)
     address = db.Column(db.String(600), unique=False, nullable=False)
     type_user = db.Column(db.String(1), unique=False, nullable=False)
     fk_country = db.Column(db.Integer, ForeignKey('country.id'), unique=False, nullable=False)
@@ -63,8 +63,8 @@ class User(db.Model):
             raise ValueError(f"{value} is not a valid type of identification.")
         return value
     
-    @validates('genre')
-    def validate_genre(self, key, value):
+    @validates('gender')
+    def validate_gender(self, key, value):
         allowed_values = ['M', 'F', 'I']
         if value not in allowed_values:
             raise ValueError(f"{value} is not a valid gender.")
