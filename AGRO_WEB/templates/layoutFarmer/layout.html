@@ -39,7 +39,7 @@
                   <!-- RD Navbar Toggle-->
                   <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                   <!-- RD Navbar Brand-->
-                  <div class="rd-navbar-brand"><a class="brand" href="index.html"><img src="{{ url_for('static', filename='images/logo-default-196x47.png') }}" alt="" width="196" height="47"/></a></div>
+                  <div class="rd-navbar-brand"><a class="brand" href="{{ url_for('home_bp.home') }}"><img src="{{ url_for('static', filename='images/AGRO-WEB.png') }}" alt="" style="width: 392px !important; height: 500px !important; " width="392" height="500"/></a></div>
                 </div>
                 <div class="rd-navbar-main-element">
                   <div class="rd-navbar-nav-wrap">
@@ -51,7 +51,7 @@
                     <ul class="rd-navbar-nav">
                       <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url_for('home_bp.home') }}">Home</a>
                       </li>
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="#">Agricultor</a>
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="{{ url_for('homeFarmer_bp.homeFarmer') }}">Agricultor</a>
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url_for('homePlaze_bp.homePlaze') }}">Plaza</a>
                       </li>

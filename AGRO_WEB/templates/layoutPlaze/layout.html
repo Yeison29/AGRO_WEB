@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
     {% block pagestyles %}{% endblock %}
     <!--[if lt IE 10]>
     <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
@@ -38,7 +39,7 @@
                   <!-- RD Navbar Toggle-->
                   <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                   <!-- RD Navbar Brand-->
-                  <div class="rd-navbar-brand"><a class="brand" href="index.html"><img src="{{ url_for('static', filename='images/logo-default-196x47.png') }}" alt="" width="196" height="47"/></a></div>
+                  <div class="rd-navbar-brand"><a class="brand" href="{{ url_for('home_bp.home') }}"><img src="{{ url_for('static', filename='images/AGRO-WEB.png') }}" alt="" style="width: 392px !important; height: 500px !important; " width="392" height="500"/></a></div>
                 </div>
                 <div class="rd-navbar-main-element">
                   <div class="rd-navbar-nav-wrap">
@@ -52,7 +53,7 @@
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url_for('homeFarmer_bp.homeFarmer') }}">Agricultor</a>
                       </li>
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="#">Plaza</a>
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="{{ url_for('homePlaze_bp.homePlaze') }}">Plaza</a>
                       </li>
                     </ul>
                   </div>
@@ -63,51 +64,7 @@
                     <div class="project-close"><span></span><span></span></div>
                   </div>
                 </div>
-                <div class="rd-navbar-project rd-navbar-modern-project">
-                  <div class="rd-navbar-project-modern-header">
-                    <h4 class="rd-navbar-project-modern-title">Get in Touch</h4>
-                    <div class="rd-navbar-project-hamburger" data-multitoggle=".rd-navbar-main" data-multitoggle-blur=".rd-navbar-wrap" data-multitoggle-isolate>
-                      <div class="project-close"><span></span><span></span></div>
-                    </div>
-                  </div>
-                  <div class="rd-navbar-project-content rd-navbar-modern-project-content">
-                    <div>
-                      <p>We are always ready to provide you with fresh organic products for your home or office. Contact us to find out how we can help you.</p>
-                      <div class="heading-6 subtitle">Our Contacts</div>
-                      <div class="row row-10 gutters-10">
-                        <div class="col-12"><img src="{{ url_for('static', filename='images/img/img1.jpg') }}" alt="" width="394" height="255"/>
-                        </div>
-                      </div>
-                      <ul class="rd-navbar-modern-contacts">
-                        <li>
-                          <div class="unit unit-spacing-sm">
-                            <div class="unit-left"><span class="icon fa fa-phone"></span></div>
-                            <div class="unit-body"><a class="link-phone" href="tel:#">+1 323-913-4688</a></div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="unit unit-spacing-sm">
-                            <div class="unit-left"><span class="icon fa fa-location-arrow"></span></div>
-                            <div class="unit-body"><a class="link-location" href="#">4730 Crystal Springs Dr, Los Angeles, CA 90027</a></div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="unit unit-spacing-sm">
-                            <div class="unit-left"><span class="icon fa fa-envelope"></span></div>
-                            <div class="unit-body"><a class="link-email" href="mailto:#">mail@demolink.org</a></div>
-                          </div>
-                        </li>
-                      </ul>
-                      <ul class="list-inline rd-navbar-modern-list-social">
-                        <li><a class="icon fa fa-facebook" href="#"></a></li>
-                        <li><a class="icon fa fa-twitter" href="#"></a></li>
-                        <li><a class="icon fa fa-google-plus" href="#"></a></li>
-                        <li><a class="icon fa fa-instagram" href="#"></a></li>
-                        <li><a class="icon fa fa-pinterest" href="#"></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+                {% include 'layoutPlaze/menu.html' %}
               </div>
             </div>
           </nav>

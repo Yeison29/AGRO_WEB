@@ -3,7 +3,7 @@
 {% block content %}
 <div class="rd-navbar-project rd-navbar-modern-project">
     <div class="rd-navbar-project-modern-header">
-        {% if user.type_user=="S" or user.type_user=="A"%}
+        {% if user.type_user=="S" or user.type_user=="P"%}
         <h4 class="rd-navbar-project-modern-title">Menu</h4>
         {% else %}
         <h4 class="rd-navbar-project-modern-title">Usuario no registrado</h4>
@@ -13,7 +13,7 @@
             <div class="project-close"><span></span><span></span></div>
         </div>
     </div>
-    {% if user.type_user=="S" or user.type_user=="A"%}
+    {% if user.type_user=="S" or user.type_user=="P"%}
     <div class="rd-navbar-project-content rd-navbar-modern-project-content">
         <div>
             <div class="row row-10 gutters-10">
@@ -32,7 +32,7 @@
                         {% if user.type_user=="S"%}
                             <div class="heading-6 subtitle" style="font-size: 10px;">Super Usuario (Admin)</div>
                         {% else %}
-                            <div class="heading-6 subtitle" style="font-size: 10px;">Agricultor</div>
+                            <div class="heading-6 subtitle" style="font-size: 10px;">Plaza</div>
                         {% endif %}
                     </div>
                 </li>
@@ -43,17 +43,11 @@
                     </div>
                 </li>
                 <li class="btn-menu">
-                    <a class="" href="#">Ver Ofertas</a>
-                </li>
-                <li class="btn-menu selected">
-                    <a class="" href="#">Comprar Insumo</a>
+                    <a class="" href="#">Realizar Oferta</a>
                 </li>
                 <li class="btn-menu">
-                        <a class="" href="#">Control Cosechas</a>
+                        <a class="" href="#">Reporte de compras</a>
                 </li>
-                <li class="btn-menu">
-                    <a class="" href="#">Reporte de ventas</a>
-            </li>
             </ul>
             <ul class="list-inline rd-navbar-modern-list-social">
                 <li><a class="icon fa fa-facebook" href="#"></a></li>
