@@ -1,0 +1,25 @@
+<!-- Breadcrumbs -->
+<section class="breadcrumbs-custom-inset">
+    <div class="breadcrumbs-custom context-dark bg-overlay-33">
+        {% if user.type_user=="S" or user.type_user=="A"%}
+        <div class="container">
+            <h2 class="breadcrumbs-custom-title">Agricultor</h2>
+            <ul class="breadcrumbs-custom-path">
+                <li><a href="{{ url_for('home_bp.home') }}">Home</a></li>
+                <li class="active"><a href="{{ url_for('homePlaze_bp.homePlaze') }}"></a>Agricultor</li>
+            </ul>
+        </div>
+        <div class="box-position"
+            style="background-image: url({{ url_for('static', filename='images/img/img4.jpg') }});"></div>
+        {% else %}
+        <div class="container">
+            <h2 class="breadcrumbs-custom-title">Upss Acceso denegado</h2>
+            <ul class="breadcrumbs-custom-path">
+                <li class="active">No eres de tipo de usuario agricultor</li>
+            </ul>
+        </div>
+        <div class="box-position"
+            style="background-image: url({{ url_for('static', filename='images/img/404.jpg') }});"></div>
+        {% endif %}
+    </div>
+</section>

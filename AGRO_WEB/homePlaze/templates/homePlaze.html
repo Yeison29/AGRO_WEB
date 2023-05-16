@@ -4,27 +4,6 @@
 {% endblock %}
 {% block content %}
 <!-- Breadcrumbs -->
-<section class="breadcrumbs-custom-inset">
-  <div class="breadcrumbs-custom context-dark bg-overlay-33">
-    {% if user.type_user=="S" or user.type_user=="P"%}
-    <div class="container">
-      <h2 class="breadcrumbs-custom-title">Plaza</h2>
-      <ul class="breadcrumbs-custom-path">
-        <li><a href="{{ url_for('home_bp.home') }}">Home</a></li>
-        <li class="active">Plaza</li>
-      </ul>
-    </div>
-    <div class="box-position" style="background-image: url({{ url_for('static', filename='images/img/img5.jpg') }});"></div>
-    {% else %}
-    <div class="container">
-      <h2 class="breadcrumbs-custom-title">Upss Acceso denegado</h2>
-      <ul class="breadcrumbs-custom-path">
-        <li class="active">No eres de tipo de usuario Plaza</li>
-      </ul>
-    </div>
-    <div class="box-position" style="background-image: url({{ url_for('static', filename='images/img/404.jpg') }});"></div>
-    {% endif %}
-  </div>
-</section>
+{% include 'breadcrumbsPlaze.html' %}
 <!-- Base typography-->
 {% endblock %}
