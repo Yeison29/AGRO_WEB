@@ -96,7 +96,7 @@ class ProductPlaze(db.Model):
 class PricePlaze(db.Model):
     __tablename__ = "pricesPlaze"
     id = db.Column(db.Integer, primary_key=True)
-    price = db.Column(db.d, unique=False, nullable=False)
+    price = db.Column(db.Float, unique=False, nullable=False)
     date = db.Column(db.DateTime, nullable=False)
     fk_product_plaze = db.Column(db.Integer, ForeignKey('productPlaze.id'), unique=False, nullable=False)
     product_plaze = relationship(ProductPlaze)
