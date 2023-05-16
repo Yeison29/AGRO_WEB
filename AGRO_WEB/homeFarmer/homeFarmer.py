@@ -1,9 +1,10 @@
-from flask import Blueprint, render_template, url_for, redirect, request,jsonify,flash
-from ..models.models import User
+from flask import Blueprint, render_template, url_for, redirect, request,jsonify,flash,current_app
 
 homeFarmer_bp = Blueprint("homeFarmer_bp", __name__, template_folder="templates", static_folder="static")
 
 @homeFarmer_bp.route('/homeFarmer')
 def homeFarmer():
-    user = User.query.filter_by(email='ydascanioa@ufpso.edu.co',password='ascanio').first()
+    session = current_app.config['GLOBAL_SESSION']
+    user = session.value
+    print(user)
     return render_template("homeFarmer.html",user=user)
