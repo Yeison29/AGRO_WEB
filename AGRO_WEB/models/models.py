@@ -79,3 +79,41 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User {}>'.format(self.id)
+    
+class ProductPlaze(db.Model):
+    __tablename__ = "productPlaze"
+    id = db.Column(db.Integer, primary_key=True)
+    code = db.Column(db.String(50), unique=True, nullable=False)
+    name_product = db.Column(db.String(250), unique=False, nullable=False)
+    unit_kg = db.Column(db.String(50), unique=False, nullable=False)
+    fk_user = db.Column(db.Integer, ForeignKey('user.id'), unique=False, nullable=False)
+    user = relationship(User)
+
+
+    def __repr__(self):
+        return '<ProductPlaze {}>'.format(self.id)
+
+class PricePlaze(db.Model):
+    __tablename__ = "pricesPlaze"
+    id = db.Column(db.Integer, primary_key=True)
+    price = db.Column(db.d, unique=False, nullable=False)
+    date = db.Column(db.DateTime, nullable=False)
+    fk_product_plaze = db.Column(db.Integer, ForeignKey('productPlaze.id'), unique=False, nullable=False)
+    product_plaze = relationship(ProductPlaze)
+
+
+    def __repr__(self):
+        return '<PricePlaze {}>'.format(self.id)
+    
+# class PriceSupplieAgricultural(db.Model):
+#     __tablename__ = "priceSupplieAgricultural"
+#     id = db.Column(db.Integer, primary_key=True)
+#     code = db.Column(db.String(50), unique=True, nullable=False)
+#     name = db.Column(db.String(250), unique=False, nullable=False)
+#     price = db.Column(db.d, unique=False, nullable=False)
+#     fk_user = db.Column(db.Integer, ForeignKey('user.id'), unique=False, nullable=False)
+#     user = relationship(User)
+
+
+#     def __repr__(self):
+#         return '<PriceSupplieAgricultural {}>'.format(self.id)
