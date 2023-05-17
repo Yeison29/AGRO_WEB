@@ -3,6 +3,6 @@ from ..models.models import User
 
 def getSessionUser():
     # user = User.query.filter_by(email='ydascanioa@ufpso.edu.co',password='ascanio').first()
-    user = User.query.filter_by(email='corabastos@gamil.com',password='corabastos').first()
+    user = User.query.filter_by(email='ydascanioa@ufpso.edu.co',password='ascanio').first()
     print(user)
     return user

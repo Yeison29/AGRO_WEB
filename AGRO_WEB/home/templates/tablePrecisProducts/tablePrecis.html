@@ -11,18 +11,23 @@
         </tr>
     </thead>
     <tbody>
-        {% for product in pricesDate %}
-        <tr>
-            <th scope="row">{{product.ProductPlaze.name_product}}</th>
-            <td>{{product.User.username}}</td>
-            <td>{{product.ProductPlaze.unit_kg}}</td>
-            <td>${{product.PricePlaze.price}}</td>
-        </tr>
-        {% endfor %}
+        {% if pricesDate|length > 0 %}
+            {% for product in pricesDate %}
+            <tr>
+                <th scope="row">{{product.ProductPlaze.name_product}}</th>
+                <td>{{product.User.username}}</td>
+                <td>{{product.ProductPlaze.unit_kg}}</td>
+                <td>${{product.PricePlaze.price}}</td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <td colspan="4" style="text-align: center;">No se han subido los precios</td>
+        {% endif %}
     </tbody>
     <tfoot>
+        <div class="col-md-10 col-lg-5 col-xl-6"></div>
         <td><a href="{{ url_for('home_bp.precisProductsPagination',pagination=pagination-1) }}">Fecha Anterior</a></td>
-        <td colspan="2"><h3 style="font-size: 20px; color: grey;">{{date}}</h3></td>
-        <td><a href="{{ url_for('home_bp.precisProductsPagination',pagination=pagination+1)}}">Fecha Siguiente</a></td>
+        <td colspan="2" ><h3 style="font-size: 20px; color: grey;">{{date}}</h3></td>
+        <td style="text-align: right;"><a href="{{ url_for('home_bp.precisProductsPagination',pagination=pagination+1)}}">Fecha Siguiente</a></td>
     </tfoot>
 </table>
