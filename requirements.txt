@@ -2,3 +2,4 @@ Flask
 jinja2
 SQLAlchemy
 Flask-SQLAlchemy
+pytz
