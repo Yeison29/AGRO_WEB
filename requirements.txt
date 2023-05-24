@@ -3,3 +3,6 @@ jinja2
 SQLAlchemy
 Flask-SQLAlchemy
 pytz
+wtforms
+flask-wtf
+email_validator
