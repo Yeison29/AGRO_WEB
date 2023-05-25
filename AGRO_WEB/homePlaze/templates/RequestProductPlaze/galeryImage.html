@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="form-group">
+            <label>Galeria de Imagenes</label>
+	    <div id="container-input">
+	       <div class="wrap-file">
+	           <div class="content-icon-camera">
+	              <input type="file" id="file" name="files[]"  accept="image/png, .jpeg, .jpg"/>
+                      <div class="icon-camera">
+                        <img src="{{ url_for('static', filename='images/img/camara.png') }}" alt="camara">
+                      </div>
+	           </div>
+	           <div id="preview-images" style="text-align: left;"></div>
+	       </div>
+	    </div>
+	</div>
+    </div>
+            <!--Modal-->
+       <div class="modal-cropp">
+            <div class="modal-content-cropp">
+                <div class="modal-header-cropp">
+                    <p>Recorta tu foto</p>
+                </div>
+                <div class="modal-body-cropp">
+                    <div class="content-imagen-cropper">
+                        <img src="" alt="" class="img-cropper" id="img-cropper">
+                    </div>
+		    <div id="preview-images">
+
+                    </div>
+                </div>
+                <div class="modal-footer-cropp">
+                    <button class="btn secundary" id="rotarI"><span class="fa fa-rotate-left"></span></button>
+                    <button class="btn secundary" id="rotarD"><span class="fa fa-rotate-right"></span></button>
+                    <button class="btn primary" id="cut">Recortar</button>
+                    <button class="btn secundary" id="close">Cancelar</button>
+                </div>
+            </div>
+        </div>
+</div>                       

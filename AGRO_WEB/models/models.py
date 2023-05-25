@@ -117,3 +117,18 @@ class PricePlaze(db.Model):
 
 #     def __repr__(self):
 #         return '<PriceSupplieAgricultural {}>'.format(self.id)
+
+
+class RequestProductPlaze(db.Model):
+    __tablename__ = "requestProductPlaze"
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    price_max = db.Column(db.Float, unique=False, nullable=False)
+    price_min = db.Column(db.Float, unique=False, nullable=False)
+    quantity = db.Column(db.Float, unique=False, nullable=False)
+    date = db.Column(db.DateTime, nullable=False)
+    fk_product_plaze = db.Column(db.Integer, ForeignKey('productPlaze.id'), unique=False, nullable=False)
+    product_plaze = relationship(ProductPlaze)
+
+
+    def __repr__(self):
+        return '< RequestProductPlaze {}>'.format(self.id)

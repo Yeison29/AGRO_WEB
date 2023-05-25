@@ -1,0 +1,70 @@
+<style>
+    .select2-container .select2-selection--single {
+        height: 60px; /* Ajusta la altura deseada */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+<div class="form-control" style="margin-left: 10px; margin-right: 10px;">
+    <h3 style="text-align: right;; font-size: 30px; color: grey; margin-bottom: 10px;">{{date}}</h3>
+    {% include "RequestProductPlaze/galeryImage.html" %} 
+    <form method="POST" action="/requestProductPlaze">
+        <div class="row row-lg row-50 justify-content-center border-classic border-classic-big">
+            <div class="col-sm-3 col-md-3 col-lg-3 wow fadeInLeft" data-wow-delay="0s">
+                {{ form.price_min.label }} {{ form.price_min(size=20, class_='form-control') }}
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3 wow fadeInLeft" data-wow-delay="0s">
+                {{ form.price_max.label }} {{ form.price_max(size=20, class_='form-control') }}
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3 wow fadeInLeft" data-wow-delay="0s">
+                {{ form.quality.label }} {{ form.quality(rows=5, cols=20, class_='form-control') }}
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3 wow fadeInLeft" data-wow-delay="0s">
+                Seleccione un producto agricola
+                <select id="productPlaze" name="productPlaze" class="form-control" style="padding: 20px;">
+                    <option value="0">SELECCIONE UN PRODUCTO</option>
+                    {% for product in productPlazeAll %}
+                    <option value="{{product.id}}">{{product.name_product}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="row row-lg row-50 justify-content-center border-classic border-classic-big">
+            <div class="col-sm-12 col-md-12 col-lg-12 text-right" data-wow-delay="0s">
+                <input type="submit" id="enviarB" class="btn btn-primary" value="Submit" style="cursor: pointer;">
+            </div>
+        </div>
+    </form>
+</div>
+<!-- <select class="form-control" id="selected">
+    <option selected="selected">orange</option>
+    <option>white</option>
+    <option>purple</option>
+  </select> -->
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='js/select2.min.js') }}"></script>
+
+<script>
+    $('#productPlaze').select2();
+    // Obtener las opciones desde el servidor
+    // $.ajax({
+    //     url: '/getProductPlaze', // URL a la que enviar la solicitud
+    //     dataType: 'json', // Tipo de datos esperado en la respuesta
+    //     success: function (data) {
+    //         // Cargar las opciones en el campo de selección
+    //         var select = $('#productPlaze');
+    //         $.each(data, function (index, option) {
+    //             select.append('<option value="' + option.valor + '">' + option.etiqueta + '</option>');
+    //         });
+
+    //         // Inicializar Select2 en el campo de selección
+    //         select.select2();
+    //     }
+    // });
+   // In your Javascript (external .js resource or <script> tag)
+
+</script>

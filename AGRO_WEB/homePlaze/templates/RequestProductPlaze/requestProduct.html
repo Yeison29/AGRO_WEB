@@ -1,0 +1,27 @@
+{% extends "layoutPlaze/layout.html" %}
+
+{% block pagestyles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/select2.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/select2.min.css') }}">
+<link href="{{ url_for('static', filename='css/cropper.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/cropper2.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/input-image.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <h2 class="breadcrumbs-custom-title">Requerir Productos Producto</h2>
+    <ul class="breadcrumbs-custom-path">
+        <li><a href="{{ url_for('homePlaze_bp.homePlaze') }}" style="color: black;">Plaza </a>
+            <label style="color: grey;">/</label>
+            <a href="#" style="color: rgb(168, 167, 167); pointer-events: none;"> recuestProducts</a>
+        </li> 
+    </ul>
+</div>
+{% include 'RequestProductPlaze/requestProductPlaze.html' %}
+{% endblock %}
+{% block pagesjs %}
+<script src="{{ url_for('static', filename='js/cropper.js') }}"></script>
+<script src="{{ url_for('static', filename='js/image-edit.js') }}"></script>
+<script src="{{ url_for('static', filename='js/file-input.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{% endblock %}
