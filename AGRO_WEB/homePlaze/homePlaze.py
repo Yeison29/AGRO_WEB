@@ -71,8 +71,8 @@ def guardarImg():
         oferta="ofertas"
         imagen_binaria = base64.b64decode(imagen_base64.split(',')[1])
         ruta=f'{"/home/yeison/proyectoIntegrador/AGRO_WEB/AGRO_WEB/static/fotos"}'
-        os.makedirs(f'{"/home/yeison/proyectoIntegrador/AGRO_WEB/AGRO_WEB/static/fotos/"}{user.id}/{oferta}', exist_ok=True)
-        r=f"{ruta}/{user.id}/{oferta}/{codigo}_{dateDay}.jpg"
+        os.makedirs(f'{"/home/yeison/proyectoIntegrador/AGRO_WEB/AGRO_WEB/static/fotos/"}{oferta}', exist_ok=True)
+        r=f"{ruta}/{oferta}/{codigo}_{dateDay}.jpg"
         with open(r, "wb") as imagen_file:
             imagen_file.write(imagen_binaria)
     return render_template("homePlaze.html",user=user)

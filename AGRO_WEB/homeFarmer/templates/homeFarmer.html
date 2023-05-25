@@ -5,9 +5,11 @@
 {% block content %}
 <!-- Breadcrumbs -->
 {% include 'breadcrumbsFarmer.html' %}
-<!-- Services -->
+{% if user.type_user=="S" or user.type_user=="A"%}
+    <!-- Services -->
 {% include 'services.html' %}
 <!-- Latest Projects-->
 {% include 'latestProductsRequest.html' %}
 <!-- Base typography-->
+{% endif %}
 {% endblock %}
