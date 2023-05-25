@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, url_for, redirect, request,jsonify,flash,current_app
 from .forms import  RequestProductPlaze as RPPF
-from ..models.models import db, PricePlaze, ProductPlaze, User, RequestProductPlaze
+from ..models.models import db, PricePlaze, ProductPlaze, User, RequestProductPlaze, City
 from datetime import datetime, timedelta
 import pytz
 import base64
@@ -12,8 +12,18 @@ homePlaze_bp = Blueprint("homePlaze_bp", __name__, template_folder="templates", 
 def homePlaze():
     session = current_app.config['GLOBAL_SESSION']
     user = session.value
-    print(user)
-    return render_template("homePlaze.html",user=user)
+    time_zone_colombia = pytz.timezone('America/Bogota')
+    dateDay = datetime.now(time_zone_colombia).date() 
+    print(user.id)
+    requestProductPlaze = db.session.query(RequestProductPlaze,ProductPlaze, User, City).\
+    join(ProductPlaze, ProductPlaze.id == RequestProductPlaze.fk_product_plaze).\
+    join(User, ProductPlaze.fk_user == User.id).\
+    join(City, City.id == User.fk_city).\
+    filter(ProductPlaze.fk_user == user.id).\
+    order_by(RequestProductPlaze.id.desc()).\
+    limit(15).all()
+    print(requestProductPlaze)
+    return render_template("homePlaze.html",user=user, requestProductPlaze=requestProductPlaze,date=dateDay)
 
 # @homePlaze_bp.route('/getProductPlaze')
 # def getProductPlaze():
@@ -39,7 +49,7 @@ def requestProductPlaze():
     requestProductPlaze= RequestProductPlaze(price_max=form.price_max.data,price_min=form.price_min.data,quantity=form.quality.data,date=dateDay,fk_product_plaze=code)
     db.session.add(requestProductPlaze)
     db.session.commit()
-    return render_template("homePlaze.html",user=user)
+    return redirect("/homePlaze")
 
 @homePlaze_bp.route('/requestProducts')
 def requestProducts():
