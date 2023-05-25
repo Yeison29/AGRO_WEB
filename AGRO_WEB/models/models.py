@@ -132,3 +132,27 @@ class RequestProductPlaze(db.Model):
 
     def __repr__(self):
         return '< RequestProductPlaze {}>'.format(self.id)
+    
+class ProductStore(db.Model):
+    __tablename__ = "productStore"
+    id = db.Column(db.Integer, primary_key=True)
+    code = db.Column(db.String(50), unique=True, nullable=False)
+    name_product = db.Column(db.String(250), unique=False, nullable=False)
+    fk_user = db.Column(db.Integer, ForeignKey('user.id'), unique=False, nullable=False)
+    user = relationship(User)
+
+
+    def __repr__(self):
+        return '<ProductStore {}>'.format(self.id)
+    
+class PriceStore(db.Model):
+    __tablename__ = "pricesStore"
+    id = db.Column(db.Integer, primary_key=True)
+    price = db.Column(db.Float, unique=False, nullable=False)
+    date = db.Column(db.DateTime, nullable=False)
+    fk_product_store = db.Column(db.Integer, ForeignKey('productStore.id'), unique=False, nullable=False)
+    product_store = relationship(ProductStore)
+
+
+    def __repr__(self):
+        return '<PriceStore {}>'.format(self.id)
