@@ -5,6 +5,6 @@ from wtforms.widgets import TextArea
 from wtforms.fields.simple import EmailField
 
 class RequestProductPlaze(FlaskForm):
-    price_min = FloatField('Precio Minimo ($)', validators=[validators.DataRequired()])
-    price_max = FloatField('Precio Maximo ($)', validators=[validators.DataRequired()])
+    price_min = FloatField('Precio Minimo ($)x1Kg', validators=[validators.DataRequired()])
+    price_max = FloatField('Precio Maximo ($)x1kg', validators=[validators.DataRequired()])
     quality = FloatField('Cantidad (Kg)', validators=[validators.DataRequired()])

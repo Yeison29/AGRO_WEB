@@ -248,7 +248,10 @@ $(document).ready(function () {
 
         // var inputNombre = document.getElementById("code");
         // Obtener el valor actual del campo de entrada
-        var codigo = document.getElementById("codigoCita").value;
+        var codigo = "";
+        // Obtén una referencia al elemento select
+        const selectElement = document.getElementById('productPlaze').value;
+        codigo=selectElement
 
         imgArray.forEach(function (imagen) {
             if (imagen != "ninguna" && cont == 0) {
@@ -258,7 +261,7 @@ $(document).ready(function () {
                 // formData.append("num",cont)
                 formData.append("codigo", codigo)
                 // Enviar la solicitud HTTP al servidor de Python
-                fetch("/guardarImg", {
+                fetch("/saveImg", {
                     method: "POST",
                     body: formData
                 });

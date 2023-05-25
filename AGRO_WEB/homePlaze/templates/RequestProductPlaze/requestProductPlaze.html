@@ -26,14 +26,14 @@
                 <select id="productPlaze" name="productPlaze" class="form-control" style="padding: 20px;">
                     <option value="0">SELECCIONE UN PRODUCTO</option>
                     {% for product in productPlazeAll %}
-                    <option value="{{product.code}}">{{product.name_product}}</option>
+                    <option value="{{product.id}}">{{product.name_product}}</option>
                     {% endfor %}
                 </select>
             </div>
         </div>
         <div class="row row-lg row-50 justify-content-center border-classic border-classic-big">
             <div class="col-sm-12 col-md-12 col-lg-12 text-right" data-wow-delay="0s">
-                <input type="submit" class="btn btn-primary" value="Submit" style="cursor: pointer;">
+                <input type="submit" id="enviarB" class="btn btn-primary" value="Submit" style="cursor: pointer;">
             </div>
         </div>
     </form>
