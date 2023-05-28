@@ -132,3 +132,22 @@ class RequestProductPlaze(db.Model):
 
     def __repr__(self):
         return '< RequestProductPlaze {}>'.format(self.id)
+    
+class Harvest(db.Model):
+    __tablename__ = "harvest"
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    name_harvest = db.Column(db.String(250), unique=False, nullable=False)
+    def __repr__(self):
+        return '< Harvest {}>'.format(self.id)
+    
+class ControlHarvest(db.Model):
+    __tablename__ = "control_harvest"
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    hectares=db.Column(db.Float, unique=False, nullable=False)
+    date_init = db.Column(db.DateTime, nullable=False)
+    date_fin = db.Column(db.DateTime, nullable=False)
+    time_production = db.Column(db.Integer, nullable=False)
+    fk_user = db.Column(db.Integer, ForeignKey('user.id'), unique=False, nullable=False)
+    user = relationship(User)
+    fk_harvest= db.Column(db.Integer, ForeignKey('harvest.id'), unique=False, nullable=False)
+    harvest=relationship(Harvest)
