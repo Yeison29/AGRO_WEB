@@ -1,0 +1,33 @@
+<!-- Latest Projects-->
+<section class="section section-md section-fluid bg-default">
+  <div class="container">
+    <h3 style="font-size: 40px;">Ultimos productos agricolas que ofertaste</h3>
+  </div>
+  <!-- Owl Carousel-->
+  <div class="owl-carousel owl-classic owl-timeline" data-items="1" data-md-items="2" data-lg-items="3"
+    data-xl-items="4" data-margin="30" data-stage-padding="15" data-xxl-stage-padding="0" data-autoplay="true"
+    data-nav="true" data-dots="true">
+    {% for product in requestProductPlaze %}
+    <div class="owl-item">
+      <!-- Thumbnail Classic-->
+      <article class="thumbnail thumbnail-mary thumbnail-md">
+        <div class="thumbnail-mary-figure"><img src="{{ url_for('static', filename='fotos/ofertas/'+product.ProductPlaze.id|string+'_'+(product.RequestProductPlaze.date|string)[:10]+'.jpg') }}" alt="" width="420" height="308" />
+        </div>
+        <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60"
+            href="{{ url_for('static', filename='fotos/ofertas/'+product.ProductPlaze.id|string+'_'+(product.RequestProductPlaze.date|string)[:10]+'.jpg') }}" data-lightgallery="item"><img
+              src="{{ url_for('static', filename='fotos/ofertas/'+product.ProductPlaze.id|string+'_'+(product.RequestProductPlaze.date|string)[:10]+'.jpg') }}" alt="" width="420" height="308" /></a>
+        </div>
+      </article>
+      {{(product.RequestProductPlaze.date|string)[:10]}}
+      <p><label style="font-weight: bold;">Precio min: $</label><label style="font-style: italic;">{{(product.RequestProductPlaze.price_min|string)[:10]}}</label> COP<br><label style="font-weight: bold;">Precio max: $</label><label style="font-style: italic;">{{(product.RequestProductPlaze.price_max|string)[:10]}}</label> COP</p>
+      <div class="thumbnail-mary-description">
+        <h5 class="thumbnail-mary-project"><a href="#">{{product.ProductPlaze.name_product}}</a></h5><span
+          class="thumbnail-mary-decor"></span>
+        <h5 class="thumbnail-mary-time">
+          <time datetime="{{product.RequestProductPlaze.quantity}}">{{product.RequestProductPlaze.quantity}} Kg</time>
+        </h5>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
