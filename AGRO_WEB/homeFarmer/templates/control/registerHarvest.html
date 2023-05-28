@@ -1,0 +1,20 @@
+{% extends "layoutFarmer/layout.html" %}
+
+{% block pagestyles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/select2.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/select2.min.css') }}">
+{% endblock %}
+{% block content %}
+<div class="container" style="margin-bottom: 50px;">
+    <h2 class="breadcrumbs-custom-title">Registrar Cosecha</h2>
+    <ul class="breadcrumbs-custom-path">
+        <li><a href="{{ url_for('homeFarmer_bp.homeFarmer') }}" style="color: black;">Agricultor </a>
+            <label style="color: grey;">/</label>
+            <a href="#" style="color: rgb(168, 167, 167); pointer-events: none;">registrarCosecha</a>
+        </li> 
+    </ul>
+</div>
+{% include 'control/register.html' %}
+{% endblock %}
+{% block pagesjs %}
+{% endblock %}

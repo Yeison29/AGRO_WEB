@@ -1,6 +1,7 @@
 {% extends "layoutFarmer/layout.html" %}
-
 {% block pagestyles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/select2.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/select2.min.css') }}">
 {% endblock %}
 {% block content %}
 <!-- Breadcrumbs -->
@@ -8,6 +9,7 @@
 {% if user.type_user=="S" or user.type_user=="A"%}
     <!-- Services -->
 {% include 'services.html' %}
+{% include 'control/control.html' %}
 <!-- Latest Projects-->
 {% include 'latestProductsRequest.html' %}
 <!-- Base typography-->

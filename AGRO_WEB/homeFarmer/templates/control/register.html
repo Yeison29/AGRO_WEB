@@ -1,0 +1,66 @@
+<style>
+    .select2-container .select2-selection--single {
+        height: 60px; /* Ajusta la altura deseada */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .stepper-input{
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+<div class="form-control" style="margin-left: 10px; margin-right: 10px;">
+    <form method="POST" action="/register">
+        <div class="row row-lg row-50 justify-content-center border-classic border-classic-big">
+            <div class="col-sm-3 col-md-3 col-lg-3 wow fadeInLeft" data-wow-delay="0s">
+                {{ form.csrf_token }}
+                {{ form.hectares.label }} {{ form.hectares(class_='form-control') }}
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3 wow fadeInLeft" data-wow-delay="0s">
+                {{ form.csrf_token }}
+                {{ form.date_init.label }}: {{ form.date_init(class_='form-control') }}
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3 wow fadeInLeft" data-wow-delay="0s">
+                {{ form.csrf_token }}
+                {{ form.date_fin.label }}: {{ form.date_fin(class_='form-control') }}
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3 wow fadeInLeft" data-wow-delay="0s">
+                {{ form.csrf_token }}
+                {{ form.time_production.label }}: {{ form.time_production(render_kw={"type": "number", "step": "1"},class_='form-control') }}
+            </div>
+        </div>
+        <div class="row row-lg row-50 justify-content-center border-classic border-classic-big">
+            <div class="col-sm-3 col-md-3 col-lg-3 wow fadeInLeft" data-wow-delay="0s">
+                Seleccione la cosecha
+                <select id="harvest" name="harvest" class="form-control" style="padding: 20px;">
+                    <option value="0" selected disabled>SELECCIONE UN PRODUCTO</option>
+                    {% for h in harvest %}
+                    <option value="{{h.id}}">{{h.name_harvest}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-sm-9 col-md-9 col-lg-9 text-right" data-wow-delay="0s" style="padding-top: 20px;">
+                <input type="submit" id="enviarB" class="btn btn-primary" value="Submit" style="cursor: pointer;">
+            </div>
+        </div>
+    </form>
+</div>
+<!-- <select class="form-control" id="selected">
+    <option selected="selected">orange</option>
+    <option>white</option>
+    <option>purple</option>
+  </select> -->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='js/select2.min.js') }}"></script>
+
+<script>
+
+    $('#harvest').select2();
+
+</script>

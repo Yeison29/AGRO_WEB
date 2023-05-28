@@ -35,7 +35,8 @@
    <!-- Javascript-->
    <script src="{{ url_for('static', filename='js/core.min.js') }}"></script>
    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-   <script src="{{ url_for('static', filename='js/select2.min.js') }}"></script>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+   <script src="{{ url_for('static', filename='js/grafica.js') }}"></script>
    {% block pagesjs %}{% endblock %}
    <!-- coded by Ragnar-->
 </html>
